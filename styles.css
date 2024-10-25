@@ -11,82 +11,102 @@ body {
     line-height: 1.6;
 }
 
-.header {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-}
-
-.header-container {
+.custom-header {
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.9); /* Light semi-transparent background */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    background-image: url('path/to/your/background-image.jpg'); /* Add subtle background elements */
+    background-size: cover;
+    background-position: center;
 }
 
-.menu-toggle {
+/* Hamburger menu */
+.menu-icon {
+    width: 30px;
+    height: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    background: none;
-    border: none;
     cursor: pointer;
 }
 
-.menu-toggle span {
-    display: block;
+.menu-icon .line {
+    height: 4px;
+    background-color: #333; /* Dark color for lines */
+    border-radius: 2px;
+}
+
+.menu-icon:hover .line {
+    background-color: #f25340; /* Change color on hover */
+}
+
+/* Add some background decoration */
+.custom-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 3px;
-    background-color: #333;
-    transition: all 0.3s ease;
+    height: 100%;
+    opacity: 0.1; /* Make background icons very subtle */
+    background-image: url('path/to/your/icons-or-texture.png'); /* Your background pattern or icons */
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
 }
 
-.main-nav {
-    display: none;
+.custom-header * {
+    z-index: 2; /* Ensure the menu stays above the background */
 }
 
-.main-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+
+.header {
+    background-color: #f4f4f4;
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
 }
 
-.main-nav li {
-    margin-bottom: 1rem;
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        url('path/to/checkered-pattern.png'),
+        url('path/to/c-symbol.png'),
+        url('path/to/diamond-pattern.png'),
+        url('path/to/x-symbol.png'),
+        url('path/to/circle-pattern.png'),
+        url('path/to/cc-symbol.png');
+    background-repeat: no-repeat;
+    background-position: 
+        10% 10%,
+        20% 20%,
+        80% 15%,
+        90% 90%,
+        95% 60%,
+        5% 95%;
+    background-size: 
+        50px,
+        30px,
+        80px,
+        20px,
+        60px,
+        25px;
+    opacity: 0.1;
+    z-index: -1;
 }
 
-.main-nav a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-@media (min-width: 768px) {
-    .menu-toggle {
-        display: none;
-    }
-
-    .main-nav {
-        display: block;
-    }
-
-    .main-nav ul {
-        display: flex;
-    }
-
-    .main-nav li {
-        margin-bottom: 0;
-        margin-left: 2rem;
-    }
+.header-container {
+    position: relative;
+    z-index: 1;
 }
 
 .header-content {
@@ -98,13 +118,13 @@ body {
 .headline {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #333; /* Dark gray color for text */
+    color: #ec5242; /* Dark gray color for text */
 }
 
 .event-title {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #333;
+    color: #ec5242; /* Dark gray color for text */
 }
 
 .description {
